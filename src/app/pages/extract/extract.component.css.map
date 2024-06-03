@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "extract.component.scss"
+    ],
+    "names": [],
+    "file": "extract.component.css"
+}

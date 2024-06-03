@@ -1,0 +1,51 @@
+<div class="client-list__container">
+    <table class="client-list__content table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Account Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clientList">
+                <td>{{client.id}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.age}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.account_number}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm me-2" (click)="edit(client)">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteClient(client.id)" >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="mt-5 col-lg-4">
+        <form [formGroup]="clientForm"  class="bg-light p-4 rounded">
+            <h3 class="mb-4"> {{ isEditMode ? 'Edit client' :'Add client' }}</h3>
+            <div class="mb-3">
+                <label  class="form-label">Name</label>
+                <input class="form-control" formControlName="name" placeholder="Enter client name">
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Email address</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter client email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input class="form-control" formControlName="age" placeholder="Enter client age">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Account Number</label>
+                <input class="form-control" formControlName="account_number" placeholder="Enter client Account Number">
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-dark me-2" (click)="clear()">Clear</button>
+                <button type="button" class="btn btn-success ml-2" [disabled]="clientForm.invalid" (click)="submit()">{{ isEditMode ? 'Update' :'Submit' }}</button>
+            </div>
+        </form>
+    </div>
+</div>

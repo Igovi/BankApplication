@@ -7,7 +7,7 @@ import { Extract } from '../../../models/extract.model';
 @Injectable({
     providedIn : 'root'
 })
-export class UserProvider extends GenericRequest<Extract> {
+export class UserProvider extends GenericRequest<any> {
     constructor(http: HttpClient) {
         super('extracts', http);
     }

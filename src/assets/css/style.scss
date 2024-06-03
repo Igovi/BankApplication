@@ -29,3 +29,11 @@ body{
     }
   }
 }
+
+
+.client-list__container{
+  @include flex($justify-content: center, $align-item:center,$flex-direction:column);
+  .client-list__content{
+    width: 750px;
+  }
+}

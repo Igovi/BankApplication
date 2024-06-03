@@ -1,9 +1,11 @@
 export interface Client {
     id: number;
 
+    name:string;
+
     email: string;
 
     age: number;
 
-    accountNumber: string;
+    account_number: string;
 }
