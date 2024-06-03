@@ -1,0 +1,10 @@
+<div class="header__container">
+    <div class="header__content">
+        <img class="header__img" src="../../../assets/images/headerLogo.png">
+        <div class="header__menu">
+            <a href="/user" class="header__menuItem" [ngClass]="{'header__selectedMenuItem': selectedTab === '/user'}" class="header__menuItem">Users</a>
+            <a href="/transaction" class="header__menuItem" [ngClass]="{'header__selectedMenuItem': selectedTab === '/transaction'}" class="header__menuItem">Transactions</a>
+            <a href="/extract" class="header__menuItem" [ngClass]="{'header__selectedMenuItem': selectedTab === '/extract'}" class="header__menuItem">Extracts</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+@import "modules/_all.scss";
+
+body{
+    margin-bottom: 200px;
+}
+
+.header__container {
+  padding: 20px;
+  background: #202020;
+  .header__content {
+    @include flex($align-item: center, $justify-content: space-between);
+    .header__img {
+        width: 150px;
+        height: 70px;
+        margin-left: 20px;
+      }
+    .header__menu {
+      margin-right: 20px;
+      .header__menuItem {
+        color: #fff;
+        margin-right: 30px;
+        font-family: "inter-Regular";
+        padding-bottom: 5px;
+        text-decoration: none;
+      }
+      .header__selectedMenuItem {
+        text-decoration: underline;
+      }
+    }
+  }
+}

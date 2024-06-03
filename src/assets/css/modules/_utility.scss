@@ -1,0 +1,25 @@
+@mixin flex($align-item:false, $align-content:false, $justify-content:false, $wrap:false, $flex-direction:false) {
+    display:-webkit-box;
+    display:-moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    @if $wrap {
+        flex-wrap:$wrap; 
+        -webkit-flex-wrap: $wrap;
+        -ms-flex-wrap: $wrap;
+    }
+    @if $align-item {
+        align-items:$align-item;
+        -webkit-align-items:$align-item;
+    }
+    @if $justify-content {
+        justify-content: $justify-content;
+        -webkit-justify-content:$justify-content;
+    }
+    @if $flex-direction {
+        flex-direction: $flex-direction;
+        -webkit-flex-direction: $flex-direction;
+        -ms-flex-direction: $flex-direction;
+    }
+}
