@@ -4,22 +4,22 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'user'
+        redirectTo: 'clients'
     },
     {
-        path: 'user',
+        path: 'clients',
         loadComponent: () => 
-            import('./pages/user/user.component')
-                .then(m => m.UserComponent)
+            import('./pages/client/client.component')
+                .then(m => m.ClientComponent)
     },
     {
-        path: 'transaction',
+        path: 'transactions',
         loadComponent: () => 
             import('./pages/transaction/transaction.component')
                 .then(m => m.TransactionComponent)
     },
     {
-        path: 'extract',
+        path: 'extracts',
         loadComponent: () => 
             import('./pages/extract/extract.component')
                 .then(m => m.ExtractComponent)

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  public selectedTab:string = '/user';
+  public selectedTab:string = '/clients';
   
   constructor(
     private router: Router,
