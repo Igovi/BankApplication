@@ -7,5 +7,5 @@ export interface Transaction {
 
     amount: number;
 
-    LocalDateTime: Date;
+    transactionDate: Date;
 }

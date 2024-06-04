@@ -1,0 +1,50 @@
+<div class="client-list__container">
+    <table class="client-list__content table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Client Id</th>
+                <th>Type</th>
+                <th>amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactionList">
+                <td>{{transaction.id}}</td>
+                <td>{{transaction.clientId}}</td>
+                <td>{{transaction.type}}</td>
+                <td>{{transaction.amount}}</td>
+                <td>{{transaction.transactionDate}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteTransaction(transaction.id)" >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   
+    <div class="mt-5 col-lg-4">
+        <form [formGroup]="transactionForm"  class="bg-light p-4 rounded">
+            <h3 class="mb-4"> Add transaction</h3>
+            <div class="mb-3">
+                <label  class="form-label">Client Id</label>
+                <input class="form-control" formControlName="clientId" placeholder="Enter client id">
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Type</label>
+                <select formControlName="type" name="type" id="type">
+                    <option value="debit">Debit</option>
+                    <option value="credit">Credit</option>
+                  </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Amount</label>
+                <input class="form-control" formControlName="amount" placeholder="Enter amount">
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-dark me-2" (click)="clear()">Clear</button>
+                <button type="button" class="btn btn-success ml-2" [disabled]="transactionForm.invalid" (click)="submit()">'Submit'</button>
+            </div>
+        </form>
+    </div>
+</div>

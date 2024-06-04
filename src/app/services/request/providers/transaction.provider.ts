@@ -7,7 +7,7 @@ import { Transaction } from '../../../models/transaction.model';
 @Injectable({
     providedIn : 'root'
 })
-export class UserProvider extends GenericRequest<any> {
+export class TransactionProvider extends GenericRequest<any> {
     constructor(http: HttpClient) {
         super('transactions', http);
     }
