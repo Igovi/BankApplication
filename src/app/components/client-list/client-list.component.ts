@@ -104,11 +104,8 @@ export class ClientListComponent {
   editClient(body:any){
     this.clientService.putGeneric(body,this.clientSelected.id).subscribe(
       (apiData) => {
-        this.clientList.map(client => {
-          if(client.id == this.clientSelected.id){
-            client = apiData;
-          };
-        })
+        let index = this.clientList.findIndex(client => client.id == this.clientSelected.id);
+        this.clientList[index] = apiData;
     }, (apiError) => {
       alert(apiError)
     }
