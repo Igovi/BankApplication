@@ -63,7 +63,7 @@ export class TransactionListComponent {
     let body = {
       clientId: this.transactionForm.value.clientId,
       type: this.transactionForm.value.type.toLowerCase(),
-      amount: this.transactionForm.value.amount,
+      amount: this.transactionForm.value.amount.replace(/,/g, "."),
       transactionDate: currentDate
     }
     console.log(body)

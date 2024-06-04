@@ -39,7 +39,6 @@ export class ExtractListComponent {
   }
 
   submit(){
-    console.log(this.extractForm.value)
     this.extractService.getByClientId(this.extractForm.value.id).subscribe(
       (apiData) => {
         this.transactionList = apiData.transactions
