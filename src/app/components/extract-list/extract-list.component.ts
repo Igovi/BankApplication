@@ -46,7 +46,7 @@ export class ExtractListComponent {
         this.total = apiData.total
         this.showTransactions = true;
     }, (apiError) => {
-      alert(apiError)
+      alert(apiError.error.message)
     }
     )
   }
