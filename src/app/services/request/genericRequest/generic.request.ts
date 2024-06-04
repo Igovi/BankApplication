@@ -34,7 +34,7 @@ export class GenericRequest<T> {
 
     putGeneric(body: any,id: number): Observable<T> {
         const URL = this.getUrl();
-        return this.http.put<T>(URL,body);
+        return this.http.put<T>(URL + '/' + id,body);
     }
     DeleteGeneric(id: number): Observable<T> {
         const URL = this.getUrl();

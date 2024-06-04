@@ -49,13 +49,13 @@ export class TransactionListComponent {
 
   deleteTransaction(id:number){
     this.transactionService.DeleteGeneric(id).subscribe(
-      (apidata:any) => {
+      (apiData:any) => {
         this.transactionList = this.transactionList.filter(transaction => transaction.id !== id )
-        alert(apidata.message);
-      }
-    ),(apiError: any) => {
+        alert(apiData.message);
+    }, (apiError) => {
       alert(apiError.message);
     }
+    )
   }
 
   submit(){
@@ -75,10 +75,11 @@ export class TransactionListComponent {
     this.transactionService.postGeneric(body).subscribe(
       (apiData:any) => {
         this.transactionList.push(apiData);
-      }
-    ),(apiError: any) => {
+    }, (apiError) => {
       alert(apiError.message);
     }
+    )
+
   }
 
 

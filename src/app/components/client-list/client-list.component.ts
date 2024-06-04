@@ -59,13 +59,13 @@ export class ClientListComponent {
 
   deleteClient(id:number){
     this.clientService.DeleteGeneric(id).subscribe(
-      (apidata:any) => {
+      (apiData:any) => {
         this.clientList = this.clientList.filter(client => client.id !== id )
-        alert(apidata.message);
-      }
-    ),(apiError: any) => {
+        alert(apiData.message);
+    }, (apiError) => {
       alert(apiError.message);
     }
+    )
   }
 
   clear() {
@@ -92,26 +92,27 @@ export class ClientListComponent {
   createClient(body:any){
     
     this.clientService.postGeneric(body).subscribe(
-      (apiData) =>{
+      (apiData) => {
         this.clientList.push(apiData);
-        
-      }
-    ),(apiError: any) =>{
+    }, (apiError) => {
       alert(apiError)
     }
+    )
+    
   }
 
   editClient(body:any){
     this.clientService.putGeneric(body,this.clientSelected.id).subscribe(
-      (apiData) =>{
+      (apiData) => {
         this.clientList.map(client => {
-          if(client == this.clientSelected){
+          if(client.id == this.clientSelected.id){
             client = apiData;
           };
         })
-      }
-    ),(apiError: any) =>{
+    }, (apiError) => {
       alert(apiError)
     }
+    )
+  
   }
 }
