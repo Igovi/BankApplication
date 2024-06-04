@@ -1,0 +1,31 @@
+<form [formGroup]="extractForm" class="mb-3">
+    <label  class="form-label">Client id</label>
+    <input class="form-control" formControlName="id" placeholder="Enter client id">
+    <button type="button" class="mt-3 btn btn-dark me-2" (click)="clear()">Clear</button>
+    <button type="button" class="mt-3 btn btn-success ml-3" [disabled]="extractForm.invalid" (click)="submit()">'Submit'</button>
+  </form>
+
+
+<div *ngIf="showTransactions" class="client-list__container">
+  <table class="client-list__content table table-striped table-bordered">
+      <thead class="thead-dark">
+          <tr>
+              <th>Id</th>
+              <th>Client Id</th>
+              <th>Type</th>
+              <th>amount</th>
+              <th>Date</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactionList">
+            <td>{{transaction.id}}</td>
+            <td>{{transaction.clientId}}</td>
+            <td>{{transaction.type}}</td>
+            <td>{{transaction.amount}}</td>
+            <td>{{transaction.transactionDate}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <p>Total: {{total}}</p>
+</div>

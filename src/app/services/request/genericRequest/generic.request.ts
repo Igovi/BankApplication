@@ -10,7 +10,7 @@ const API_URL = environment.apiUrl
 export class GenericRequest<T> {
     constructor(
         @Inject(String) private path: string,
-        private http: HttpClient,
+        public http: HttpClient,
     ) {}
 
     getUrl(): string{
